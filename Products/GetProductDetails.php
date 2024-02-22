@@ -14,7 +14,8 @@ if (isset($_GET['id'])) {
     $productId = mysqli_real_escape_string($conn, $_GET['id']);
 
     // Prepare SELECT query
-    $sql = "SELECT * FROM products WHERE id = $productId";
+    $sql = "SELECT `id`, `name`, `description`, `price`, `category_id` FROM products WHERE id = $productId";
+
 
     // Execute query
     $result = mysqli_query($conn, $sql);
