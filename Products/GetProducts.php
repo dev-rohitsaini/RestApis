@@ -16,9 +16,11 @@ $result = mysqli_query($conn, $sql);
 // Check if there are rows returned
 if (mysqli_num_rows($result) > 0) {
     // Output data of each row
+    $products = array();
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "ID: " . $row["id"] . " - Name: " . $row["name"] . " - Description: " . $row["description"] . "<br>";
+        $products[] = $row;
     }
+    echo json_encode($products);
 } else {
     echo "0 results";
 }
