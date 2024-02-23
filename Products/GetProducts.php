@@ -8,7 +8,7 @@ if (!$conn) {
 }
 
 // Prepare SELECT query
-$sql = "SELECT * FROM products";
+$sql = "SELECT `id`, `name`, `description`, `price`, `category_id` FROM products";
 
 // Execute query
 $result = mysqli_query($conn, $sql);
